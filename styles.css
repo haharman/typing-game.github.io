@@ -47,6 +47,19 @@ input {
   font-size: 1rem;
 }
 
+#history {
+  margin-top: 1rem;
+  list-style: none;
+  padding: 0;
+  font-size: 0.9rem;
+}
+
+#menu {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
 button {
   font-size: 1.25rem;
   padding: 0.5rem 1rem;

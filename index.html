@@ -9,32 +9,35 @@
 </head>
 <body>
   <main>
-    <h1>Typing Sprint</h1>
+    <h1 id="title">Typing Sprint</h1>
     <p id="description">Type the word shown and press space or enter to submit. You have 60 seconds to score as many points as possible.</p>
-    <div id="game" class="hidden" aria-live="polite">
+    <div id="game" class="hidden">
       <div id="word-container">
-        <span id="current-word"></span>
+        <span id="current-word" aria-live="assertive"></span>
         <span id="next-word" aria-hidden="true"></span>
       </div>
       <label for="input" class="visually-hidden">Type the current word</label>
       <input id="input" type="text" autocomplete="off" spellcheck="false" aria-label="Type the current word" />
       <div id="stats">
-        <span id="time">60</span>s
-        <span id="score">0</span> pts
-        <span id="wpm">0 WPM</span>
-        <span id="accuracy">100%</span>
-        <span id="combo">0x</span>
-        <span id="high-score">HS:0</span>
+        <span id="time"></span>
+        <span id="score"></span>
+        <span id="wpm"></span>
+        <span id="accuracy"></span>
+        <span id="combo"></span>
+        <span id="high-score"></span>
       </div>
-      <button id="restart">Restart</button>
+      <button id="restart" class="hidden">Restart</button>
     </div>
-    <button id="start">Start</button>
+    <ul id="history" aria-label="Last scores"></ul>
+    <div id="menu">
+      <button id="start">Start</button>
+      <button id="practice">Practice</button>
+    </div>
   </main>
   <noscript>
     <p>This game requires JavaScript. Typing the displayed words and submitting with space or enter scores points within 60 seconds.</p>
   </noscript>
   <script type="module" src="game.js"></script>
-
-  <!-- README: To customize the word list, edit the WORDS array in game.js. Adjust the timer length by changing the TIMER_DURATION constant in game.js. -->
+  <!-- README: To customize word lists or UI strings, edit typing/data.js. Adjust the timer length by changing the TIMER_DURATION constant in game.js. -->
 </body>
 </html>
