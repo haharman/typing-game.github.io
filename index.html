@@ -1,43 +1,29 @@
-<!-- index.html: Main page for zero-build typing game using plain HTML/CSS/JS. Emphasizes accessibility, no-build setup, and no-JS fallback. -->
+<!-- index.html: Minimal typing game entry point. Key decisions: plain markup, accessible focus management, noscript fallback. -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Typing Sprint</title>
+  <title>World Route Typing</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <main>
-    <h1 id="title">Typing Sprint</h1>
-    <p id="description">Type the word shown and press space or enter to submit. You have 60 seconds to score as many points as possible.</p>
+    <h1>World Route Typing</h1>
     <div id="game" class="hidden">
-      <div id="word-container">
-        <span id="current-word" aria-live="assertive"></span>
-        <span id="next-word" aria-hidden="true"></span>
-      </div>
-      <label for="input" class="visually-hidden">Type the current word</label>
-      <input id="input" type="text" autocomplete="off" spellcheck="false" aria-label="Type the current word" />
-      <div id="stats">
-        <span id="time"></span>
-        <span id="score"></span>
-        <span id="wpm"></span>
-        <span id="accuracy"></span>
-        <span id="combo"></span>
-        <span id="high-score"></span>
-      </div>
-      <button id="restart" class="hidden">Restart</button>
+      <div id="word" aria-live="assertive"></div>
+      <label for="input" class="visually-hidden">Type the word shown</label>
+      <input id="input" type="text" autocomplete="off" spellcheck="false" />
+      <div id="timer"></div>
+      <div id="result" aria-live="polite"></div>
     </div>
-    <ul id="history" aria-label="Last scores"></ul>
-    <div id="menu">
-      <button id="start">Start</button>
-      <button id="practice">Practice</button>
-    </div>
+    <button id="start">Start</button>
   </main>
   <noscript>
-    <p>This game requires JavaScript. Typing the displayed words and submitting with space or enter scores points within 60 seconds.</p>
+    <p>JavaScript is required for the typing game. Type the displayed word and press Enter to submit before the timer runs out.</p>
   </noscript>
-  <script type="module" src="game.js"></script>
-  <!-- README: To customize word lists or UI strings, edit typing/data.js. Adjust the timer length by changing the TIMER_DURATION constant in game.js. -->
+  <script type="module" src="src/minimal.js"></script>
+
+  <!-- README: To customize words, edit WORDS in src/minimal.js. Change TIMER_SECONDS in the same file to adjust round length. -->
 </body>
 </html>

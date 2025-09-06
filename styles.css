@@ -1,68 +1,42 @@
-/* styles.css: Core styles for the typing game. Mobile-first, high contrast, with focus and error animations. */
+/* styles.css: Basic high-contrast layout. Key decisions: no global bleed, reduced motion respect, big typography. */
 
-html, body {
-  margin: 0;
-  padding: 0;
+:root {
+  color-scheme: light dark;
+  font-family: monospace;
 }
 
 body {
-  font-family: system-ui, sans-serif;
+  margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: #fafafa;
-  color: #222;
+  background: #fff;
+  color: #000;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #000;
+    color: #fff;
+  }
 }
 
 main {
   text-align: center;
-  width: 90%;
-  max-width: 600px;
 }
 
-#word-container {
+#word {
   font-size: 2rem;
-  margin: 1.5rem 0;
+  margin: 1rem 0;
 }
 
-#next-word {
-  color: #bbb;
-  margin-left: 0.5rem;
-}
-
-input {
+#input {
   font-size: 1.5rem;
   padding: 0.5rem;
-  width: 100%;
-  box-sizing: border-box;
 }
 
-#stats {
-  margin-top: 1rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  font-size: 1rem;
-}
-
-#history {
-  margin-top: 1rem;
-  list-style: none;
-  padding: 0;
-  font-size: 0.9rem;
-}
-
-#menu {
-  margin-top: 1.5rem;
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-button {
-  font-size: 1.25rem;
-  padding: 0.5rem 1rem;
+#timer {
   margin-top: 1rem;
 }
 
@@ -72,14 +46,12 @@ button {
 
 .visually-hidden {
   position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
   clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
   white-space: nowrap;
-  border: 0;
 }
 
 .error {
@@ -87,9 +59,7 @@ button {
 }
 
 @keyframes shake {
-  0% { transform: translateX(0); }
+  from, to { transform: translateX(0); }
   25% { transform: translateX(-5px); }
-  50% { transform: translateX(5px); }
-  75% { transform: translateX(-5px); }
-  100% { transform: translateX(0); }
+  75% { transform: translateX(5px); }
 }
