@@ -1,0 +1,34 @@
+<!-- index.html: World Route Typing entry. Key decisions: scoped styles, route select, noscript fallback. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>World Route Typing</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+  <body>
+    <div id="app">
+      <main>
+        <h1>World Route Typing</h1>
+        <label for="route">Route:</label>
+        <select id="route"></select>
+        <div id="game" class="hidden">
+          <div id="progress"><div id="progress-bar"></div></div>
+          <div id="word" aria-live="assertive"></div>
+          <label for="input" class="visually-hidden">Type the word shown</label>
+          <input id="input" type="text" autocomplete="off" spellcheck="false" />
+          <div id="timer"></div>
+          <div id="result" aria-live="polite"></div>
+        </div>
+        <button id="start">Start</button>
+      </main>
+    </div>
+    <noscript>
+      <p>JavaScript is required for the typing game. Type the displayed word and press Enter to submit before the timer runs out.</p>
+    </noscript>
+    <script type="module" src="game.js"></script>
+
+    <!-- README: To author a new route, copy routes/sample_tokyo_kyoto.js and register it in routes/index.js. -->
+  </body>
+</html>

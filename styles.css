@@ -1,0 +1,94 @@
+/* styles.css: Scoped high-contrast layout under #app. Key decisions: avoid global bleed, include progress bar. */
+
+#app {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #fff;
+  color: #000;
+  font-family: monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  #app {
+    background: #000;
+    color: #fff;
+  }
+}
+
+#app main {
+  text-align: center;
+}
+
+#app #word {
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+
+#app #input {
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+
+#app #timer {
+  margin-top: 1rem;
+}
+
+#app .hidden {
+  display: none;
+}
+
+#app .visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#app .error {
+  animation: tg-shake 0.3s;
+}
+
+@keyframes tg-shake {
+  from, to { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+#app #progress {
+  position: relative;
+  height: 4px;
+  background: #ccc;
+  margin-top: 0.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  #app #progress {
+    background: #333;
+  }
+}
+
+#app #progress-bar {
+  height: 100%;
+  width: 0%;
+  background: #0a0;
+}
+
+#app #progress .tick {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: #000;
+}
+
+@media (prefers-color-scheme: dark) {
+  #app #progress .tick {
+    background: #fff;
+  }
+}

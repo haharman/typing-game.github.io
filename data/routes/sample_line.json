@@ -1,0 +1,16 @@
+{
+  "routeId": "wl_coast_ring",
+  "displayName": "沿岸環状線（外回り）",
+  "difficulty": 1.00,
+  "stops": [
+    {"id":"hatsune","name":"初音ヶ丘","kana":"はつねがおか","romaji":"hatsunegaoka","transfer":1,"rare":false,"pass":false},
+    {"id":"mizube","name":"水辺町","kana":"みずべちょう","romaji":"mizubecho","transfer":0,"rare":false,"pass":true},
+    {"id":"yashima","name":"八島","kana":"やしま","romaji":"yashima","transfer":2,"rare":true,"pass":false}
+  ],
+  "rules": {
+    "stripSuffixStation": true,
+    "stripParentheses": true,
+    "normalizeHyphenLongVowel": true
+  },
+  "normalizer": 0
+}
