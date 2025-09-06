@@ -1,0 +1,29 @@
+<!-- index.html: Minimal typing game entry point. Key decisions: plain markup, accessible focus management, noscript fallback. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>World Route Typing</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main>
+    <h1>World Route Typing</h1>
+    <div id="game" class="hidden">
+      <div id="word" aria-live="assertive"></div>
+      <label for="input" class="visually-hidden">Type the word shown</label>
+      <input id="input" type="text" autocomplete="off" spellcheck="false" />
+      <div id="timer"></div>
+      <div id="result" aria-live="polite"></div>
+    </div>
+    <button id="start">Start</button>
+  </main>
+  <noscript>
+    <p>JavaScript is required for the typing game. Type the displayed word and press Enter to submit before the timer runs out.</p>
+  </noscript>
+  <script type="module" src="src/minimal.js"></script>
+
+  <!-- README: To customize words, edit WORDS in src/minimal.js. Change TIMER_SECONDS in the same file to adjust round length. -->
+</body>
+</html>

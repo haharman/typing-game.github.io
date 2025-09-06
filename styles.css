@@ -1,0 +1,65 @@
+/* styles.css: Basic high-contrast layout. Key decisions: no global bleed, reduced motion respect, big typography. */
+
+:root {
+  color-scheme: light dark;
+  font-family: monospace;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #fff;
+  color: #000;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #000;
+    color: #fff;
+  }
+}
+
+main {
+  text-align: center;
+}
+
+#word {
+  font-size: 2rem;
+  margin: 1rem 0;
+}
+
+#input {
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+
+#timer {
+  margin-top: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.error {
+  animation: shake 0.3s;
+}
+
+@keyframes shake {
+  from, to { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
